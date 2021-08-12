@@ -1,0 +1,10 @@
+.hd_btn{
+    position:relative;
+    margin-top: 15px;
+    float: left;
+}
+#hd_ipt{
+    margin-top: 15px;
+    margin-left: 20rem;
+    width: 600px;
+}

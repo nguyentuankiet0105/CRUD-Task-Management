@@ -1,0 +1,72 @@
+#task {
+    margin: 10px 16px;
+    padding: 5px 5px;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 300px;
+    margin-top: 15px;
+}
+.content {
+    font-size: 15px;
+    height: 290px;
+}
+.content-creator{
+    margin-top: -5px;
+}
+.stt{
+    margin-top: -10px;
+    font-size: 14px;
+    font-style: italic;
+}
+.status {
+    margin-top: -22.5px;
+    margin-right: -5.5px;
+    float: right;
+}
+
+.status button {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+#delete{
+    background: rgb(233, 140, 116);
+    border-radius: 2px 2px 8px 2px;
+    border: 1px solid black;
+    font-weight: 500;
+    font-style: italic;
+} 
+
+ #delete:hover{
+    opacity: 0.8;
+}
+
+#edit {
+    background: rgb(231, 229, 117);
+    border-radius: 2px;
+    border: 1px solid black;
+    font-weight: 500;
+    font-style: italic;
+} 
+ #edit:hover{
+    opacity: 0.8;
+}
+#stt-spn{
+    font-weight: 650;
+    text-transform: uppercase;
+}
+#new{
+    color: green;
+}
+#done{
+    color: blue;
+}
+#inprogress{
+    color: orange;
+}
+
+
+

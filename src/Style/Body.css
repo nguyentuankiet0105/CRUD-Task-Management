@@ -1,0 +1,18 @@
+#input{
+    width: 740px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+#notask{
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration-line: underline;
+    color: red;
+    margin: 100px auto;
+}
+#content{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 700px;
+}
+
