@@ -61,13 +61,17 @@
 }
 #new{
     color: green;
+    background-color: rgb(150, 233, 150);
 }
 #done{
     color: blue;
+    background-color: rgb(184, 184, 241);
 }
 #inprogress{
     color: orange;
+    background-color: rgb(243, 210, 149);
 }
+
 
 
 

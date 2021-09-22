@@ -21,6 +21,7 @@ const Body = () => {
     title: '',
     creator: '',
     description: '',
+    status: 1,
     deadline: new Date(),
   });
   const [listTask, setListTask] = React.useState([]);
@@ -53,10 +54,10 @@ const Body = () => {
           creator: formValue.creator,
           description: formValue.description,
           deadline: formValue.deadline,
-          status: 'new',
+          status: getStatus(formValue.status),
         },
       ],
-      setFormValue({...formValue, title:'', creator:'', description:'',}),
+      setFormValue({ ...formValue, title: '', creator: '', description: '' }),
       alert('you have added the task successfully!!!')
     );
   };
@@ -70,7 +71,7 @@ const Body = () => {
           creator: formValue.creator,
           description: formValue.description,
           deadline: formValue.deadline,
-          status: 'new',
+          status: formValue.status,
         },
       ];
       localStorage.setItem(LIST_TASK, JSON.stringify(list));
@@ -92,7 +93,6 @@ const Body = () => {
   };
 
   const renderByStatus = (status) => {
-    console.log('listTask', listTask);
     if (listTask.length) {
       return listTask.map((item, index) => {
         if (item.status !== status) return null;
@@ -117,6 +117,19 @@ const Body = () => {
       return <h1 id="notask">No Task In Here</h1>;
     }
   };
+  const getStatus = (stt) => {
+    switch (stt) {
+      case 2:
+        return "INPROGRESS";
+      case 3:
+        return "DONE";
+      default:
+        return "NEW";
+    }
+  };
+  const onChange = (e) => {
+    setFormValue({...formValue, status: e.target.value});
+  }
   const renderAllTask = () => {
     if (listTask.length) {
       return listTask.map((item, index) => {
@@ -179,7 +192,6 @@ const Body = () => {
               indexEditing ? listTask[indexEditing].title : '(Option) Add description tasks in here'
             }
             onChange={(e) => handleOnChange(e)}
-
             value={formValue.description}
           />
         </Form.Item>
@@ -192,9 +204,11 @@ const Body = () => {
           />
         </Form.Item>
         <Form.Item>
-          <Radio>NEW</Radio>
-          <Radio>INPROGRESS</Radio>
-          <Radio>DONE</Radio>
+          <Radio.Group onChange={onChange} value={formValue.status}>
+            <Radio value={1}>NEW</Radio>
+            <Radio value={2}>INPROGRESS</Radio>
+            <Radio value={3}>DONE</Radio>
+          </Radio.Group>
         </Form.Item>
         <Form.Item>
           {indexEditing ? (
